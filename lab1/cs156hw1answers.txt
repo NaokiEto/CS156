@@ -1,0 +1,112 @@
+1.a
+
+Justification:
+1(i) has input and output data
+1(ii) has input data
+1(iii) has input data and some output data (similar to the backgammon example)
+
+2.a
+
+Justification:
+2(i) there is no pattern to classifying prime numbers and non-primes
+2(ii) there is data on previous frauds, there is no mathematical function, and there is a pattern
+2(iii) there is a mathematical function, so a learning approach is not optimal
+2(iv) there is data on previous traffic, there is no mathematical function, and there is a pattern
+
+3.d
+
+Justification:
+
+Let two black balls in bag 1 be A and B. Let the black and white ball in bag 2 be C and D respectively. So, the possible choices are
+
+AB
+BA
+
+CD
+DC
+
+Since we pick black first, possible choices are AB, BA and CD. Two out of three have a black black as the 2nd ball. So, probability is 2/3
+
+
+4.b
+
+Probability of not drawing a red marble is 0.45
+So, 0.45^10
+
+5.c
+
+Probability of not drawing red marble 10 times is 0.45^10
+
+So, probability of not having nu = 0 in 1 sample only is 1-0.45^10.
+
+Probability that none of the samples have nu = 0 is
+(1-0.45^10)^1000
+
+So, the probability that at least of the samples have nu = 0 is
+1 - (1-0.45^10)^1000
+
+6. 
+ANSWER:
+e
+
+JUSTIFICATION:
+Possibilities for the remaining 3 are
+
+101    110    111
+0      0      0
+0      0      1
+0      1      0
+0      1      1
+1      0      0
+1      0      1
+1      1      0
+1      1      1
+
+6a. 1*3 + 3*2 + 3*1 + 1*0 = 12 (111; 110,101,011; 001,010,100; 000)
+ b. 1*3 + 3*2 + 3*1 + 1*0 = 12 (000; 001,010,100; 110,101,011; 111)
+ c. 1*3 + 3*2 + 3*1 + 1*0 = 12 (001; 000,011,101; 010,100,111; 100)
+ d. 1*3 + 3*2 + 3*1 + 1*0 = 12 (100; 010,100,111; 000,011,101; 001)
+
+all of the hypotheses have score of 12
+
+7. b
+Average number of iterations: 10.228, which is closest to 15
+
+8. c
+
+120421/1000000 points did not match, closest to 0.1
+0.1
+
+9. b 
+Average number of iterations: 97.19, which is closest to 100
+
+10. b
+14436/1000000 did not match, closest to 0.01
+
+Justification for problems 7 to 10
+Target function
+First, get 2 random points
+Make a line out of the 2 random points (function f)
+Get 10 random points (x_a, y_a)
+Compare the random y-coordinates y_a with the function f.
+Determine the sign (y_a < y_f --> sign_target = -1, y_a >= y_f --> sign_target = 1)
+
+Hypothesis
+Set w0, w1, w2 equal to 0
+Let S = w0*1 + w1*x_a + w2*y_a
+If S > 0, sign_hypo = 1
+else, sign_hypo = -1
+
+See if this sign matches the sign from the target function steps
+
+If the signs don't match, put it in a list. After going through all the points,
+pick one of the elements randomly and use it
+
+w0 += sign_target
+w1 += sign_target * x_a
+w2 += sign_target * y_a
+
+Then, go through the points again with the new w0, w1, w2
+
+To determine the probability, I did a monte carlo simulation. I tested a million points
+
