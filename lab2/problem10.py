@@ -5,14 +5,9 @@ misclassified = 0
 
 outofsample = 0
 
-numPoints = 1000
+numPoints = 500
 
-w0total = 0
-w1total = 0
-w2total = 0
-w3total = 0
-w4total = 0
-w5total = 0
+numPointsMonte = 300
 
 for num in range(1000):
 
@@ -64,32 +59,25 @@ for num in range(1000):
     w3 = weights[3]
     w4 = weights[4]
     w5 = weights[5]
-    
-    w0total += w0
-    w1total += w1
-    w2total += w2
-    w3total += w3
-    w4total += w4
-    w5total += w5  
 
     # Monte Carlo simulation
-    x2 = range(numPoints)
+    x2 = range(numPointsMonte)
 
     # y-coordinates of random data
-    ydat2 = range(numPoints)
+    ydat2 = range(numPointsMonte)
 
     # y-coordinates of hypothesis
-    yhypo2 = range(numPoints)
+    yhypo2 = range(numPointsMonte)
 
     # signs for target
-    ysig2 = range(numPoints)
+    ysig2 = range(numPointsMonte)
 
-    nonoise = range(numPoints)
+    nonoise = range(numPointsMonte)
 
     # signs for hypothesis
-    ysigHypo2 = range(numPoints)
+    ysigHypo2 = range(numPointsMonte)
 
-    for i in range(numPoints):
+    for i in range(numPointsMonte):
         # x-coordinates
         x2[i] = random.random()*2.0 - 1.0
 
@@ -109,19 +97,11 @@ for num in range(1000):
         else:
             yhypo2[i] = -1
 
-    for i in range(int(numPoints*0.1)):
+    for i in range(int(numPointsMonte*0.1)):
         ysig2[i] = ysig2[i]*-1
 
-        if(nonoise[i] != yhypo2[i]):
+        if(ysig2[i] != yhypo2[i]):
             outofsample += 1
 
 print "the number of misclassified out of sample points are: ", outofsample  
 
-w0avg = w0total/1000
-w1avg = w1total/1000
-w2avg = w2total/1000
-w3avg = w3total/1000
-w4avg = w4total/1000
-w5avg = w5total/1000
-
-print "the weights are: ", w0avg, w1avg, w2avg, w3avg, w4avg, w5avg

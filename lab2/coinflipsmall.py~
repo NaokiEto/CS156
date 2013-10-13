@@ -24,7 +24,7 @@ for a in range(10000):
             tenFlips[j] += tenthousand[j*10+k]
 
     # random coin to choose
-    randcoin = randint(0, 999)
+    randcoin = randint(0, 499)
 
     firstavg += tenFlips[0]
 

@@ -5,7 +5,7 @@ misclassified = 0
 
 outofsample = 0
 
-numPoints = 1000
+numPoints = 500
 
 for num in range(1000):
 
@@ -56,7 +56,7 @@ for num in range(1000):
     w1 = weights[1]
     w2 = weights[2]
 
-    for i in range(1000):
+    for i in range(numPoints):
         x0 = 1
         x1 = x[i]
         x2 = ydat[i]
@@ -68,7 +68,7 @@ for num in range(1000):
         else:
             ysigN = -1
 
-        if (ysigN != nonoise[i]):
+        if (ysigN != ysig[i]):
             misclassified += 1
 print "the number of misclassified points is: ", misclassified
 

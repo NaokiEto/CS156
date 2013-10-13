@@ -9,7 +9,7 @@ zeroten = 0
 numberOf = 0
 
 for a in range(10000):
-    # number of flips for each of 100 coins
+    # number of flips for each of 1000 coins
     tenFlips = range(500)
 
     # total flips

@@ -1,11 +1,13 @@
 import random
 import numpy as np
 
+listIter = range(7000)
+
 misclassified = 0
 
 outofsample = 0
 
-numPoints = 10
+numPoints = 6
 
 for num in range(1000):
 
@@ -77,7 +79,10 @@ for num in range(1000):
         else:
             ysigN = -1
 
+        # the coordinates of missed points
         misList = []
+
+        # the signs
         tList = []
 
         # figure out if each point is classified or misclassfied
@@ -114,10 +119,10 @@ for num in range(1000):
     listIter[num] = numIter
 
 total = 0
-for term in range(1000):
+for term in range(7000):
     total += listIter[term]
 
-average = total/1000.0
+average = total/7000.0
 
 print total
 print average

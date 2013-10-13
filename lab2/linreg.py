@@ -7,6 +7,8 @@ outofsample = 0
 
 numPoints = 100
 
+numPointsMonte = 1000
+
 for num in range(1000):
 
     # coordinates for line
@@ -56,11 +58,12 @@ for num in range(1000):
 
     weights = np.dot(pseudoInv, ysignTarg)
 
+    # calculate the weights
     w0 = weights[0]
     w1 = weights[1]
     w2 = weights[2]
 
-    for i in range(100):
+    for i in range(numPoints):
         x0 = 1
         x1 = x[i]
         x2 = ydat[i]
@@ -76,22 +79,22 @@ for num in range(1000):
             misclassified += 1
 
     # Monte Carlo simulation
-    x2 = range(1000)
-    y2 = range(1000)
+    x2 = range(numPointsMonte)
+    y2 = range(numPointsMonte)
 
     # y-coordinates of random data
-    ydat2 = range(1000)
+    ydat2 = range(numPointsMonte)
 
     # y-coordinates of hypothesis
-    yhypo2 = range(1000)
+    yhypo2 = range(numPointsMonte)
 
     # signs for target
-    ysig2 = range(1000)
+    ysig2 = range(numPointsMonte)
 
     # signs for hypothesis
-    ysigHypo2 = range(1000)
+    ysigHypo2 = range(numPointsMonte)
 
-    for i in range(1000):
+    for i in range(numPointsMonte):
         x2[i] = random.random()*2.0 - 1.0
 
         y2[i] = slope*(x2[i] - a1) + b1

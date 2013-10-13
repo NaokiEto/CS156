@@ -7,7 +7,7 @@ misclassified = 0
 
 outofsample = 0
 
-numPoints = 10
+numPoints = 6
 
 for num in range(1000):
 
@@ -79,7 +79,10 @@ for num in range(1000):
         else:
             ysigN = -1
 
+        # the coordinates of missed points
         misList = []
+
+        # the signs
         tList = []
 
         # figure out if each point is classified or misclassfied

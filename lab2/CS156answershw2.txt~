@@ -1,4 +1,4 @@
-1.c
+1.b
 
 average is 0.371 heads out of 10 flips.
 
@@ -16,7 +16,68 @@ test epsilon = 0.3 for cmin
 
 get the minimum of the 1000 coin flip scenarios, see if it is 0, 1, 2, 8, 9, or 10 heads
 
-10000
+10000/10000
+
+3. e
+
+probability of f being right is lambda
+
+probability of h being wrong about f is mu
+
+2nd case:
+
+probability of f being wrong is 1-lambda
+probability fo h being right about f is 1 - mu
+
+So, answer is lambda * mu + (1-lambda)*(1 - mu)
+
+4. 0.5, using algebra
+
+lambda*mu + (1-lambda)*(1 - mu)
+
+lambda*mu + 1 - lambda - mu + lambda*mu
+
+2*lambda*mu - mu - lambda + 1
+
+So, lambda = 0.5
+
+5.
+
+the number of misclassified out of sample points are:  48429
+the number of misclassified points is:  4002
+
+the number of misclassified out of sample points are:  49096
+the number of misclassified points is:  3980
+
+
+out of 100,000 points
+
+c
+
+6.
+dunno
+
+7.
+
+2615
+2.615
+
+a
+
+
+8.
+d
+
+9.a
+choice A: 96.2% match
+choice B: 
+
+10.
+b
+96797 out of 1,000,000
+
+0.1
+
 
 
 
