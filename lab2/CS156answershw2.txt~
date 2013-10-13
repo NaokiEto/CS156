@@ -1,0 +1,25 @@
+1.c
+
+average is 0.371 heads out of 10 flips.
+
+2. d
+
+for crand, epsilon = 0.0017
+
+for cfirst, epsilon = 0.0025
+
+for cmin, epsilon = 0.0371 -->P(|v-u| > 0.4627) <= 0.0276
+
+because N = 10, epsilon has to be at least 0.186 . Only the cmin fits this criteria
+
+test epsilon = 0.3 for cmin
+
+get the minimum of the 1000 coin flip scenarios, see if it is 0, 1, 2, 8, 9, or 10 heads
+
+10000
+
+
+
+
+
+

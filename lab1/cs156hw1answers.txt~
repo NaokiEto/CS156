@@ -30,7 +30,6 @@ Since we pick black first, possible choices are AB, BA and CD. Two out of three 
 
 4.b
 
-Justification:
 Probability of not drawing a red marble is 0.45
 So, 0.45^10
 
