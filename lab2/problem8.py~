@@ -5,7 +5,7 @@ misclassified = 0
 
 outofsample = 0
 
-numPoints = 1000
+numPoints = 100
 
 for num in range(1000):
 
